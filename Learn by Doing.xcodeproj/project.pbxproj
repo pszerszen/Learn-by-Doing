@@ -13,6 +13,8 @@
 		09516AD227F8A1C7006794A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09516AC227F88DDA006794A1 /* Preview Assets.xcassets */; };
 		09516AD727F8A4CD006794A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09516AD627F8A4CD006794A1 /* LaunchScreen.storyboard */; };
 		09516ADA27F8ABFF006794A1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09516AD927F8ABFF006794A1 /* CardView.swift */; };
+		09516ADC27F8B6C7006794A1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09516ADB27F8B6C7006794A1 /* Card.swift */; };
+		09516ADE27F8B7DA006794A1 /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09516ADD27F8B7DA006794A1 /* CardData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		09516AD627F8A4CD006794A1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09516AD827F8AB2A006794A1 /* Learn-by-Doing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Learn-by-Doing-Info.plist"; sourceTree = SOURCE_ROOT; };
 		09516AD927F8ABFF006794A1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		09516ADB27F8B6C7006794A1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		09516ADD27F8B7DA006794A1 /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				09516ABB27F88DCA006794A1 /* Learn_by_DoingApp.swift */,
 				09516ABF27F88DDA006794A1 /* Assets.xcassets */,
 				09516AC127F88DDA006794A1 /* Preview Content */,
+				09516ADB27F8B6C7006794A1 /* Card.swift */,
+				09516ADD27F8B7DA006794A1 /* CardData.swift */,
 			);
 			path = "Learn by Doing";
 			sourceTree = "<group>";
@@ -146,7 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09516ADE27F8B7DA006794A1 /* CardData.swift in Sources */,
 				09516ACF27F8A1BE006794A1 /* Learn_by_DoingApp.swift in Sources */,
+				09516ADC27F8B6C7006794A1 /* Card.swift in Sources */,
 				09516ADA27F8ABFF006794A1 /* CardView.swift in Sources */,
 				09516AD027F8A1BE006794A1 /* ContentView.swift in Sources */,
 			);
