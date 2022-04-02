@@ -15,6 +15,10 @@ struct CardView: View {
         return card.gradientColors
     }
     
+    @State private var fadeIn: Bool = false
+    @State private var moveDownward: Bool = false
+    @State private var moveUpward: Bool = false
+    
     init(card: Card) {
         self.card = card
     }
@@ -22,6 +26,7 @@ struct CardView: View {
     var body: some View {
         ZStack {
             Image(card.imageName)
+                .opacity(fadeIn ? 1.0 : 0.0)
             
             VStack {
                 Text(card.title)
@@ -34,7 +39,7 @@ struct CardView: View {
                     .foregroundColor(.white)
                     .italic()
             }
-            .offset(y: -218)
+            .offset(y: moveDownward ? -218 : -300)
             
             Button {
                 print(card.message)
@@ -59,13 +64,22 @@ struct CardView: View {
                 .clipShape(Capsule())
                 .shadow(color: Color("ColorShadow"), radius: 6, x: 0, y: 3)
             }
-            .offset(y: /*@START_MENU_TOKEN@*/210.0/*@END_MENU_TOKEN@*/)
+            .offset(y: moveUpward ? /*@START_MENU_TOKEN@*/210.0/*@END_MENU_TOKEN@*/ : 300.0)
             
         }
         .frame(width: 335, height: 545)
         .background(LinearGradient(gradient: Gradient(colors: gradientColors), startPoint: .top, endPoint: .bottom))
         .cornerRadius(16)
         .shadow(radius: 8)
+        .onAppear() {
+            withAnimation(.linear(duration: 1.2)) {
+                self.fadeIn.toggle()
+            }
+            withAnimation(.linear(duration: 0.8)) {
+                self.moveDownward.toggle()
+                self.moveUpward.toggle()
+            }
+        }
     }
 }
 

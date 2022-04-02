@@ -68,11 +68,11 @@
 				09516AD827F8AB2A006794A1 /* Learn-by-Doing-Info.plist */,
 				09516AD627F8A4CD006794A1 /* LaunchScreen.storyboard */,
 				09516ABB27F88DCA006794A1 /* Learn_by_DoingApp.swift */,
+				09516AE327F8BE57006794A1 /* PlaySound.swift */,
 				09516ABF27F88DDA006794A1 /* Assets.xcassets */,
 				09516ADF27F8BAB1006794A1 /* Model */,
 				09516AC127F88DDA006794A1 /* Preview Content */,
 				09516AE027F8BABB006794A1 /* View */,
-				09516AE327F8BE57006794A1 /* PlaySound.swift */,
 			);
 			path = "Learn by Doing";
 			sourceTree = "<group>";
