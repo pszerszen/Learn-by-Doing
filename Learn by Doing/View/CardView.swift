@@ -9,7 +9,15 @@ import SwiftUI
 
 struct CardView: View {
     
-    let card: Card
+    private let card: Card
+    
+     private var gradientColors: [Color] {
+        return card.gradientColors
+    }
+    
+    init(card: Card) {
+        self.card = card
+    }
     
     var body: some View {
         ZStack {
@@ -32,7 +40,7 @@ struct CardView: View {
                 print(card.message)
             } label: {
                 HStack {
-                    Text(card.callToAction)
+                    Text(card.callToAction.uppercased())
                         .fontWeight(.heavy)
                         .foregroundColor(.white)
                         .accentColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
@@ -42,7 +50,7 @@ struct CardView: View {
                 }
                 .padding(.vertical)
                 .padding(.horizontal, 24)
-                .background(LinearGradient(gradient: Gradient(colors: card.gradientColors), startPoint: .leading, endPoint: .trailing))
+                .background(LinearGradient(gradient: Gradient(colors: gradientColors), startPoint: .leading, endPoint: .trailing))
                 .clipShape(Capsule())
                 .shadow(color: Color("ColorShadow"), radius: 6, x: 0, y: 3)
             }
@@ -50,7 +58,7 @@ struct CardView: View {
             
         }
         .frame(width: 335, height: 545)
-        .background(LinearGradient(gradient: Gradient(colors: card.gradientColors), startPoint: .top, endPoint: .bottom))
+        .background(LinearGradient(gradient: Gradient(colors: gradientColors), startPoint: .top, endPoint: .bottom))
         .cornerRadius(16)
         .shadow(radius: 8)
     }
@@ -58,7 +66,9 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(card: cardData[0])
-            .previewLayout(.sizeThatFits)
+        ForEach(cardData) { item in
+            CardView(card: item)
+                .previewLayout(.sizeThatFits)
+        }
     }
 }
