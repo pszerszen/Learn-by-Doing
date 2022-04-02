@@ -11,7 +11,7 @@ struct CardView: View {
     
     private let card: Card
     
-     private var gradientColors: [Color] {
+    private var gradientColors: [Color] {
         return card.gradientColors
     }
     
@@ -50,7 +50,11 @@ struct CardView: View {
                 }
                 .padding(.vertical)
                 .padding(.horizontal, 24)
-                .background(LinearGradient(gradient: Gradient(colors: gradientColors), startPoint: .leading, endPoint: .trailing))
+                .background(
+                    LinearGradient(
+                        gradient: Gradient(colors: gradientColors),
+                        startPoint: .leading,
+                        endPoint: .trailing))
                 .clipShape(Capsule())
                 .shadow(color: Color("ColorShadow"), radius: 6, x: 0, y: 3)
             }
