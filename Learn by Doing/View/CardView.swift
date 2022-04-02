@@ -15,12 +15,12 @@ struct CardView: View {
         return card.gradientColors
     }
     
-    @State private var fadeIn: Bool = false
-    @State private var moveDownward: Bool = false
-    @State private var moveUpward: Bool = false
+    @State private var fadeIn = false
+    @State private var moveDownward = false
+    @State private var moveUpward = false
+    @State private var showAlert = false
     
     var hapticImpact = UIImpactFeedbackGenerator(style: .heavy)
-    
     
     init(card: Card) {
         self.card = card
@@ -45,9 +45,9 @@ struct CardView: View {
             .offset(y: moveDownward ? -218 : -300)
             
             Button {
-                print(card.message)
                 playSound()
                 self.hapticImpact.impactOccurred()
+                self.showAlert.toggle()
             } label: {
                 HStack {
                     Text(card.callToAction.uppercased())
@@ -83,6 +83,11 @@ struct CardView: View {
                 self.moveDownward.toggle()
                 self.moveUpward.toggle()
             }
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text(card.title),
+                  message: Text(card.message),
+                  dismissButton: .default(Text("OK")))
         }
     }
 }
