@@ -38,6 +38,7 @@ struct CardView: View {
             
             Button {
                 print(card.message)
+                playSound()
             } label: {
                 HStack {
                     Text(card.callToAction.uppercased())
